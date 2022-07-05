@@ -12,6 +12,7 @@
     <description>CMBChina工作学习记录</description>
     <modules>
         <module>CS98-Test</module>
+        <module>CS98-Common</module>
     </modules>
 
     <parent>
