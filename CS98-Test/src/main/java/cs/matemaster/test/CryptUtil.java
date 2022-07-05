@@ -5,14 +5,12 @@ import lombok.NoArgsConstructor;
 import lombok.var;
 import org.assertj.core.util.Arrays;
 
-import java.util.Objects;
-
 /**
  * @author MateMaster
  * @since 2022/7/5
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class CS98cryptUtil {
+public class CryptUtil {
 
     public static long JAVAHash(Object... values) {
         if (Arrays.isNullOrEmpty(values)) {
