@@ -27,6 +27,7 @@ public class SysUserVO {
     private static final String CMB = "CMB";
     private static final int DEFAULT_CAPACITY = 100_000;
     private static final ThreadLocalRandom currencyRdm = ThreadLocalRandom.current();
+    private static final String ALPHABET_NUMBER = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
     public static List<SysUserVO> generate() {
         return generate(DEFAULT_CAPACITY);
@@ -45,23 +46,13 @@ public class SysUserVO {
         int len = 16;
         char[] pwd = new char[len];
         for (int i = 0; i < len; i++) {
-            switch (currencyRdm.nextInt(3)) {
-                case 1:
-                    pwd[i] = (char) ('0' + currencyRdm.nextInt(10));
-                    break;
-                case 2:
-                    pwd[i] = (char) ('a' + currencyRdm.nextInt(26));
-                    break;
-                case 3:
-                    pwd[i] = (char) ('A' + currencyRdm.nextInt(26));
-                    break;
-            }
+            pwd[i] = ALPHABET_NUMBER.charAt(currencyRdm.nextInt(ALPHABET_NUMBER.length()));
         }
         return new String(pwd);
     }
 
     private static String rdmCaptcha() {
-        var str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        var str = ALPHABET_NUMBER;
         var sb = new StringBuilder(4);
         for (int i = 0; i < 4; i++) {
             char ch = str.charAt(currencyRdm.nextInt(str.length()));
