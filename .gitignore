@@ -7,3 +7,7 @@
 /CS98-Test/target/
 /CS98-Test/src/test/
 /CS98-Common/src/test/
+/CS98-Web/target/
+/CS98-Web/src/main/resources/application.yml
+/CS98-Web/src/main/resources/application-dev.yml
+/CS98-Web/CS98-Web.iml

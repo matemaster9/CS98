@@ -13,6 +13,7 @@
     <modules>
         <module>CS98-Test</module>
         <module>CS98-Common</module>
+        <module>CS98-Web</module>
     </modules>
 
     <parent>
