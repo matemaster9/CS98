@@ -2,6 +2,7 @@ package cs.matemaster.web.util;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.Collection;
 
@@ -34,5 +35,14 @@ public class BizUtil {
 
     public static boolean isFalse(Boolean result) {
         return Boolean.FALSE.equals(result);
+    }
+
+    public static boolean isEmptyOrBlank(String str) {
+        return StringUtils.isEmpty(str) || StringUtils.isBlank(str);
+    }
+
+
+    public static class Constants {
+        public static final String BLANK = "";
     }
 }

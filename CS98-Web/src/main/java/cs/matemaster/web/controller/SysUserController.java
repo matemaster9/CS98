@@ -34,4 +34,9 @@ public class SysUserController {
         return true;
     }
 
+    @ApiOperation("获取随机用户")
+    @PostMapping("/rdmUser")
+    public SysUserVO getRandomUser() {
+        return SysUserVO.rdmUser();
+    }
 }
