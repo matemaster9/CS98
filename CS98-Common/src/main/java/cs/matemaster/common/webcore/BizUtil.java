@@ -38,7 +38,6 @@ public class BizUtil {
         return !isEmptyMap(map);
     }
 
-
     public static boolean isTrue(Boolean result) {
         return Boolean.TRUE.equals(result);
     }
