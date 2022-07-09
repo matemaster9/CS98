@@ -26,7 +26,7 @@ public class SysUserController {
     @ApiOperation("用户注册")
     @PostMapping("/register")
     public Boolean register(SysUserDTO sysUser) {
-        return true;
+        return sysUserFacade.registerUser(sysUser);
     }
 
     @ApiOperation("用户登陆")
