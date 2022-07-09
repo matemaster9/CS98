@@ -1,6 +1,0 @@
-server:
-  port: 8090
-
-
-web-bff-application:
-  web-api-url: http://localhost:8080
