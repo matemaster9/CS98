@@ -23,6 +23,29 @@ import java.util.Map;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class HttpClientUtil {
 
+    public static HttpResponseWrapperVO doGet(String url) {
+        return doSendGet(url, null,
+                HttpClientConfig.CONNECTION_REQUEST_TIMEOUT,
+                HttpClientConfig.CONNECTION_TIMEOUT,
+                HttpClientConfig.SOCKET_TIMEOUT);
+    }
+
+    public static HttpResponseWrapperVO doGet(String url,
+                                              Map<String, String> headerParams) {
+        return doSendGet(url, headerParams,
+                HttpClientConfig.CONNECTION_REQUEST_TIMEOUT,
+                HttpClientConfig.CONNECTION_TIMEOUT,
+                HttpClientConfig.SOCKET_TIMEOUT);
+    }
+
+    public static HttpResponseWrapperVO doGet(String url,
+                                              Map<String, String> headerParams,
+                                              int connectionRequestTimeout,
+                                              int connectionTimeout,
+                                              int socketTimeout) {
+        return doSendGet(url, headerParams, connectionRequestTimeout, connectionTimeout, socketTimeout);
+    }
+
     private static HttpResponseWrapperVO doSendGet(String url,
                                                    Map<String, String> headerParams,
                                                    int connectionRequestTimeout,
@@ -61,7 +84,7 @@ public class HttpClientUtil {
                 String result = EntityUtils.toString(response.getEntity(), StandardCharsets.UTF_8);
                 httpResponseWrapper.setData(result);
             } else {
-
+                httpResponseWrapper.setData(null);
             }
         } catch (IOException e) {
             httpGet.abort();
