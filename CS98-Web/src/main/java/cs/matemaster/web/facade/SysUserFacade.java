@@ -1,6 +1,7 @@
 package cs.matemaster.web.facade;
 
 import cs.matemaster.common.dto.SysUserDTO;
+import cs.matemaster.common.vo.SysUserVO;
 
 /**
  * @author MateMaster
@@ -15,4 +16,12 @@ public interface SysUserFacade {
      * @return
      */
     boolean registerUser(SysUserDTO sysUser);
+
+    /**
+     * 用户登陆
+     *
+     * @param sysUser
+     * @return
+     */
+    Boolean login(SysUserVO sysUser);
 }
