@@ -32,7 +32,7 @@ public class SysUserController {
     @ApiOperation("用户登陆")
     @PostMapping("/login")
     public Boolean login(SysUserVO sysUser) {
-        return true;
+        return sysUserFacade.login(sysUser);
     }
 
     @ApiOperation("获取随机用户")
