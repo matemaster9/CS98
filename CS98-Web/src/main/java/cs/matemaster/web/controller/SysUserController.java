@@ -6,6 +6,7 @@ import cs.matemaster.web.facade.SysUserFacade;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,7 +36,7 @@ public class SysUserController {
     }
 
     @ApiOperation("获取随机用户")
-    @PostMapping("/rdmUser")
+    @GetMapping("/rdmUser")
     public SysUserVO getRandomUser() {
         return SysUserVO.rdmUser();
     }

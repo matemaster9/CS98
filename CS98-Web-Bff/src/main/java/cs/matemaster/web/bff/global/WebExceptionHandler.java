@@ -1,4 +1,4 @@
-package cs.matemaster.common.webcore.global;
+package cs.matemaster.web.bff.global;
 
 import cs.matemaster.common.constant.ErrorCode;
 import cs.matemaster.common.exception.WebRuntimeException;

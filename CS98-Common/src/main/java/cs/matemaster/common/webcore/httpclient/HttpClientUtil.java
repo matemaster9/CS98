@@ -15,7 +15,6 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
 import org.springframework.web.util.UriUtils;
-import sun.security.krb5.internal.PAData;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
