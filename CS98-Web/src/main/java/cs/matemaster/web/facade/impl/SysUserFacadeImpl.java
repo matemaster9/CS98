@@ -2,6 +2,7 @@ package cs.matemaster.web.facade.impl;
 
 import cs.matemaster.common.dto.SysUserDTO;
 import cs.matemaster.common.exception.WebRuntimeException;
+import cs.matemaster.common.vo.SysUserVO;
 import cs.matemaster.web.constant.WebApiErrorCode;
 import cs.matemaster.web.facade.SysUserFacade;
 import cs.matemaster.web.service.SysUserService;
@@ -30,5 +31,10 @@ public class SysUserFacadeImpl implements SysUserFacade {
             throw new WebRuntimeException(WebApiErrorCode.SYS_USER_INFO_NULL_ERROR);
         }
         return sysUserService.registerUser(sysUser);
+    }
+
+    @Override
+    public Boolean login(SysUserVO sysUser) {
+        return sysUserService.login(sysUser);
     }
 }

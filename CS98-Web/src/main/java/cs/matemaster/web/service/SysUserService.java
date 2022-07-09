@@ -1,6 +1,7 @@
 package cs.matemaster.web.service;
 
 import cs.matemaster.common.dto.SysUserDTO;
+import cs.matemaster.common.vo.SysUserVO;
 
 /**
  * @author MateMaster
@@ -15,4 +16,12 @@ public interface SysUserService {
      * @return
      */
     boolean registerUser(SysUserDTO sysUser);
+
+    /**
+     * 登陆，依据数据库比对用户数据
+     *
+     * @param sysUser
+     * @return
+     */
+    Boolean login(SysUserVO sysUser);
 }
