@@ -1,4 +1,4 @@
-package cs.matemaster.web.aop;
+package cs.matemaster.web.global;
 
 import cs.matemaster.common.response.SuccessResponse;
 import cs.matemaster.common.webcore.BizUtil;
