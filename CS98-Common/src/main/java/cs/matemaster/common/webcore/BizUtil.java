@@ -1,10 +1,11 @@
-package cs.matemaster.web.util;
+package cs.matemaster.common.webcore;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Collection;
+import java.util.Map;
 
 /**
  * @author MateMaster
@@ -28,6 +29,15 @@ public class BizUtil {
     public static boolean isNotEmptyColl(Collection<?> coll) {
         return !isEmptyColl(coll);
     }
+
+    public static boolean isEmptyMap(Map<?, ?> map) {
+        return map == null || map.isEmpty();
+    }
+
+    public static boolean isNotEmptyMap(Map<?, ?> map) {
+        return !isEmptyMap(map);
+    }
+
 
     public static boolean isTrue(Boolean result) {
         return Boolean.TRUE.equals(result);
