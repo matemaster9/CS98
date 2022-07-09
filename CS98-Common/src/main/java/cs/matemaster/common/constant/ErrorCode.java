@@ -11,7 +11,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum ErrorCode implements BaseCode {
     SUCCESS("0000", "请求成功"),
-    SYSTEM_UNKNOWN_ERROR("CSV0001", "未知错误");
+    UNKNOWN("CSV0001", "未知错误");
 
     private String code;
     private String message;
