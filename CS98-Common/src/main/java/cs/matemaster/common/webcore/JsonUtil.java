@@ -1,4 +1,4 @@
-package cs.matemaster.web.util;
+package cs.matemaster.common.webcore;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;

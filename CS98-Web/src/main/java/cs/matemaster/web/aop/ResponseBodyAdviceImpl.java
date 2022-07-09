@@ -1,7 +1,7 @@
 package cs.matemaster.web.aop;
 
 import cs.matemaster.common.response.SuccessResponse;
-import cs.matemaster.web.util.BizUtil;
+import cs.matemaster.common.webcore.BizUtil;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
