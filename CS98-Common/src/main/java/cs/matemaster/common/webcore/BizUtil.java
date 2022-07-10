@@ -12,7 +12,7 @@ import java.util.Map;
  * @since 2022/7/6
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class BizUtil {
+public final class BizUtil {
 
     public static <T> boolean isEmptyArray(T[] array) {
         return array == null || array.length == 0;

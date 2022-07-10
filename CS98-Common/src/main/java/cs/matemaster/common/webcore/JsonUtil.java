@@ -16,7 +16,7 @@ import java.util.Objects;
  * @since 2022/7/8
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class JsonUtil {
+public final class JsonUtil {
 
     private static final ObjectMapper MAPPER = new ObjectMapper();
     private static final ObjectMapper CAMEL_MAPPER = new ObjectMapper();
