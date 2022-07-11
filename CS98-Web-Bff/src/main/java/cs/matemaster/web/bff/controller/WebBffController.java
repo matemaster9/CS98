@@ -1,13 +1,14 @@
 package cs.matemaster.web.bff.controller;
 
+import cs.matemaster.common.request.Eg1QueryRequest;
 import cs.matemaster.common.vo.SysUserVO;
 import cs.matemaster.web.bff.facade.WebBffFacade;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.time.LocalDateTime;
 
 /**
  * @author MateMaster
@@ -25,5 +26,17 @@ public class WebBffController {
     @PostMapping("/rdmUser")
     public SysUserVO getRandomUser() {
         return webBffFacade.getRandomUserInfo();
+    }
+
+    @ApiOperation("打印")
+    @GetMapping("/printSysWebCfg")
+    public void printSysWebCfg() {
+        webBffFacade.print();
+    }
+
+    @ApiOperation("查询")
+    @PostMapping("/querySysWebCfg")
+    public void querySysWebCfg(@RequestBody Eg1QueryRequest request) {
+        webBffFacade.querySysWebCfg(request);
     }
 }

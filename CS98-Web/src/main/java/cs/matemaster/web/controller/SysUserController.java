@@ -6,10 +6,7 @@ import cs.matemaster.web.facade.SysUserFacade;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author MateMaster
@@ -25,7 +22,7 @@ public class SysUserController {
 
     @ApiOperation("用户注册")
     @PostMapping("/register")
-    public Boolean register(SysUserDTO sysUser) {
+    public Boolean register(@RequestBody SysUserDTO sysUser) {
         return sysUserFacade.registerUser(sysUser);
     }
 

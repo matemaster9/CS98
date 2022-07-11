@@ -1,5 +1,6 @@
 package cs.matemaster.web.bff.facade;
 
+import cs.matemaster.common.request.Eg1QueryRequest;
 import cs.matemaster.common.vo.SysUserVO;
 
 /**
@@ -14,4 +15,16 @@ public interface WebBffFacade {
      * @return
      */
     SysUserVO getRandomUserInfo();
+
+    /**
+     * 打印测试
+     */
+    void print();
+
+    /**
+     * 测试工作实践校验逻辑
+     *
+     * @param request
+     */
+    void querySysWebCfg(Eg1QueryRequest request);
 }
