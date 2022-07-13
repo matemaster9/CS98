@@ -1,6 +1,6 @@
 package cs.matemaster.web.bff.service;
 
-import cs.matemaster.common.vo.SysUserVO;
+import cs.matemaster.web.common.vo.SysUserVO;
 
 /**
  * @author MateMaster

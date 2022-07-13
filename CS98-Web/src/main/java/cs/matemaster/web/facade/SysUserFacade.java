@@ -1,7 +1,7 @@
 package cs.matemaster.web.facade;
 
-import cs.matemaster.common.dto.SysUserDTO;
-import cs.matemaster.common.vo.SysUserVO;
+import cs.matemaster.web.common.dto.SysUserDTO;
+import cs.matemaster.web.common.vo.SysUserVO;
 
 /**
  * @author MateMaster

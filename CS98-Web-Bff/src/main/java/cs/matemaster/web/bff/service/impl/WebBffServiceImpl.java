@@ -1,12 +1,12 @@
 package cs.matemaster.web.bff.service.impl;
 
 import com.fasterxml.jackson.core.type.TypeReference;
-import cs.matemaster.common.constant.ErrorCode;
-import cs.matemaster.common.dto.DataWrapperDTO;
-import cs.matemaster.common.vo.SysUserVO;
-import cs.matemaster.common.webcore.BizUtil;
-import cs.matemaster.common.webcore.JsonUtil;
-import cs.matemaster.common.webcore.httpclient.HttpClientUtil;
+import cs.matemaster.web.common.constant.ErrorCode;
+import cs.matemaster.web.common.dto.DataWrapperDTO;
+import cs.matemaster.web.common.vo.SysUserVO;
+import cs.matemaster.web.common.webcore.BizUtil;
+import cs.matemaster.web.common.webcore.JsonUtil;
+import cs.matemaster.web.common.webcore.httpclient.HttpClientUtil;
 import cs.matemaster.web.bff.config.SysBffConfig;
 import cs.matemaster.web.bff.service.WebBffService;
 import lombok.AllArgsConstructor;

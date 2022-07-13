@@ -1,14 +1,12 @@
 package cs.matemaster.web.bff.controller;
 
-import cs.matemaster.common.request.Eg1QueryRequest;
-import cs.matemaster.common.vo.SysUserVO;
+import cs.matemaster.web.common.request.Eg1QueryRequest;
+import cs.matemaster.web.common.vo.SysUserVO;
 import cs.matemaster.web.bff.facade.WebBffFacade;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-
-import java.time.LocalDateTime;
 
 /**
  * @author MateMaster

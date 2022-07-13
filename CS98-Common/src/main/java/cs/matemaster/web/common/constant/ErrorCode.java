@@ -1,19 +1,17 @@
-package cs.matemaster.web.constant;
+package cs.matemaster.web.common.constant;
 
-import cs.matemaster.web.common.constant.BaseCode;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 /**
  * @author MateMaster
- * @since 2022/7/9
+ * @since 2022/7/8
  */
 @Getter
 @AllArgsConstructor
-public enum WebApiErrorCode implements BaseCode {
-
-    SYS_USER_INFO_NULL_ERROR("CSA0001", "用户信息为空"),
-    SYS_USER_EXISTED_ERROR("CSA0002", "用户已存在");
+public enum ErrorCode implements BaseCode {
+    SUCCESS("0000", "请求成功"),
+    UNKNOWN("CSV0001", "未知错误");
 
     private String code;
     private String message;

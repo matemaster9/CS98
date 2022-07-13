@@ -1,7 +1,7 @@
 package cs.matemaster.web.bff.facade;
 
-import cs.matemaster.common.request.Eg1QueryRequest;
-import cs.matemaster.common.vo.SysUserVO;
+import cs.matemaster.web.common.request.Eg1QueryRequest;
+import cs.matemaster.web.common.vo.SysUserVO;
 
 /**
  * @author MateMaster

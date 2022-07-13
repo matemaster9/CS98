@@ -1,7 +1,7 @@
 package cs.matemaster.web.controller;
 
-import cs.matemaster.common.dto.SysUserDTO;
-import cs.matemaster.common.vo.SysUserVO;
+import cs.matemaster.web.common.dto.SysUserDTO;
+import cs.matemaster.web.common.vo.SysUserVO;
 import cs.matemaster.web.facade.SysUserFacade;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

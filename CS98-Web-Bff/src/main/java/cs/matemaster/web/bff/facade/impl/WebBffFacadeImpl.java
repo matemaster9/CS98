@@ -1,9 +1,9 @@
 package cs.matemaster.web.bff.facade.impl;
 
-import cs.matemaster.common.exception.WebRuntimeException;
-import cs.matemaster.common.request.Eg1QueryRequest;
-import cs.matemaster.common.vo.SysUserVO;
-import cs.matemaster.common.webcore.BizUtil;
+import cs.matemaster.web.common.exception.WebRuntimeException;
+import cs.matemaster.web.common.request.Eg1QueryRequest;
+import cs.matemaster.web.common.vo.SysUserVO;
+import cs.matemaster.web.common.webcore.BizUtil;
 import cs.matemaster.web.bff.config.SysWebCfg;
 import cs.matemaster.web.bff.constant.WebBffErrorCode;
 import cs.matemaster.web.bff.facade.WebBffFacade;
@@ -15,7 +15,6 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Objects;
 
 /**
  * @author MateMaster
@@ -29,7 +28,7 @@ public class WebBffFacadeImpl implements WebBffFacade {
     private WebBffService webBffService;
     private SysWebCfg sysWebCfg;
 
-    private static String LOCAL_DATE_TIME_PATTERN = "yyyy-MM-dd HH:mm:ss.SSS";
+    private static final String LOCAL_DATE_TIME_PATTERN = "yyyy-MM-dd HH:mm:ss.SSS";
 
     @Override
     public SysUserVO getRandomUserInfo() {

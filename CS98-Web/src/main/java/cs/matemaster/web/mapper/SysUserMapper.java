@@ -1,6 +1,6 @@
 package cs.matemaster.web.mapper;
 
-import cs.matemaster.common.dto.SysUserDTO;
+import cs.matemaster.web.common.dto.SysUserDTO;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
