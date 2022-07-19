@@ -1,7 +1,10 @@
 package cs.matemaster.web.bff.facade.impl;
 
+import cs.matemaster.web.common.dto.SysUserDTO;
 import cs.matemaster.web.common.exception.WebRuntimeException;
+import cs.matemaster.web.common.model.PageDataView;
 import cs.matemaster.web.common.request.Eg1QueryRequest;
+import cs.matemaster.web.common.request.QuerySysUserRequest;
 import cs.matemaster.web.common.vo.SysUserVO;
 import cs.matemaster.web.common.webcore.BizUtil;
 import cs.matemaster.web.bff.config.SysWebCfg;
@@ -47,6 +50,19 @@ public class WebBffFacadeImpl implements WebBffFacade {
         checkAndPreprocess(request);
         log.info(request.getStart());
         log.info(request.getEnd());
+    }
+
+    @Override
+    public PageDataView<SysUserDTO> getPagingList(QuerySysUserRequest request) {
+        if (request.getPageNo() < 1) {
+            // throw err
+        }
+
+        if (request.getPageSize() < 0) {
+            // throw err
+        }
+
+        return webBffService.getPagingList(request);
     }
 
     private void checkAndPreprocess(Eg1QueryRequest request) {

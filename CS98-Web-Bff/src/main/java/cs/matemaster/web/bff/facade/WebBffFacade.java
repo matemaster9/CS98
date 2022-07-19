@@ -1,6 +1,9 @@
 package cs.matemaster.web.bff.facade;
 
+import cs.matemaster.web.common.dto.SysUserDTO;
+import cs.matemaster.web.common.model.PageDataView;
 import cs.matemaster.web.common.request.Eg1QueryRequest;
+import cs.matemaster.web.common.request.QuerySysUserRequest;
 import cs.matemaster.web.common.vo.SysUserVO;
 
 /**
@@ -27,4 +30,11 @@ public interface WebBffFacade {
      * @param request
      */
     void querySysWebCfg(Eg1QueryRequest request);
+
+    /**
+     * 手动分页查询用户数据
+     *
+     * @return
+     */
+    PageDataView<SysUserDTO> getPagingList(QuerySysUserRequest request);
 }

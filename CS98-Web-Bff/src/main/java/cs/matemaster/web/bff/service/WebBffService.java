@@ -1,5 +1,8 @@
 package cs.matemaster.web.bff.service;
 
+import cs.matemaster.web.common.dto.SysUserDTO;
+import cs.matemaster.web.common.model.PageDataView;
+import cs.matemaster.web.common.request.QuerySysUserRequest;
 import cs.matemaster.web.common.vo.SysUserVO;
 
 /**
@@ -14,4 +17,12 @@ public interface WebBffService {
      * @return
      */
     SysUserVO getRandomUserInfo();
+
+    /**
+     * 手动分页查询用户
+     *
+     * @param request
+     * @return
+     */
+    PageDataView<SysUserDTO> getPagingList(QuerySysUserRequest request);
 }

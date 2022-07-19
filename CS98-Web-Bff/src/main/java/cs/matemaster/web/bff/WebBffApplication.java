@@ -11,7 +11,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 @SpringBootApplication(scanBasePackages = WebBffApplication.ScanBasePackages)
 @ConfigurationPropertiesScan(WebBffApplication.ScanBasePackages)
-@EnableSwagger2
 public class WebBffApplication {
 
     public static final String ScanBasePackages = "cs.matemaster.web";

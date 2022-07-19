@@ -1,6 +1,9 @@
 package cs.matemaster.web.bff.controller;
 
+import cs.matemaster.web.common.dto.SysUserDTO;
+import cs.matemaster.web.common.model.PageDataView;
 import cs.matemaster.web.common.request.Eg1QueryRequest;
+import cs.matemaster.web.common.request.QuerySysUserRequest;
 import cs.matemaster.web.common.vo.SysUserVO;
 import cs.matemaster.web.bff.facade.WebBffFacade;
 import io.swagger.annotations.Api;
@@ -36,5 +39,11 @@ public class WebBffController {
     @PostMapping("/querySysWebCfg")
     public void querySysWebCfg(@RequestBody Eg1QueryRequest request) {
         webBffFacade.querySysWebCfg(request);
+    }
+
+    @ApiOperation("分页查询用户信息")
+    @PostMapping("/getPagingList")
+    public PageDataView<SysUserDTO> getPagingList(QuerySysUserRequest request) {
+        return webBffFacade.getPagingList(request);
     }
 }
