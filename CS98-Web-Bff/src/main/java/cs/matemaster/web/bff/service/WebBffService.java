@@ -5,6 +5,8 @@ import cs.matemaster.web.common.model.PageDataView;
 import cs.matemaster.web.common.request.QuerySysUserRequest;
 import cs.matemaster.web.common.vo.SysUserVO;
 
+import java.util.List;
+
 /**
  * @author MateMaster
  * @since 2022/7/9
@@ -25,4 +27,12 @@ public interface WebBffService {
      * @return
      */
     PageDataView<SysUserDTO> getPagingList(QuerySysUserRequest request);
+
+    /**
+     * 并发查询
+     *
+     * @param capacity
+     * @return
+     */
+    List<SysUserDTO> concurrencyQuery(int capacity);
 }

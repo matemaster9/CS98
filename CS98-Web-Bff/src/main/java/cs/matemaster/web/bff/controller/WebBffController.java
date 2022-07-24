@@ -1,17 +1,16 @@
 package cs.matemaster.web.bff.controller;
 
+import cs.matemaster.web.bff.facade.WebBffFacade;
 import cs.matemaster.web.common.dto.SysUserDTO;
 import cs.matemaster.web.common.model.PageDataView;
 import cs.matemaster.web.common.request.Eg1QueryRequest;
 import cs.matemaster.web.common.request.QuerySysUserRequest;
 import cs.matemaster.web.common.vo.SysUserVO;
-import cs.matemaster.web.bff.facade.WebBffFacade;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 /**
  * @author MateMaster
@@ -21,6 +20,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/sys")
 @AllArgsConstructor
+@Slf4j
 public class WebBffController {
 
     private WebBffFacade webBffFacade;
@@ -49,9 +49,11 @@ public class WebBffController {
         return webBffFacade.getPagingList(request);
     }
 
-    @ApiOperation("时间分段")
-    @GetMapping("/subDate")
-    public List<?> subDate(String start ,String end) {
-        return webBffFacade.subSection(start, end);
+    @ApiOperation("并发查询")
+    @GetMapping("/concurrencyQuery")
+    public void concurrencyQuery(int capacity) {
+        long now = System.currentTimeMillis();
+        log.info(String.valueOf(webBffFacade.concurrencyQuery(capacity).size()));
+        log.info("接口耗时: " + (System.currentTimeMillis() - now));
     }
 }

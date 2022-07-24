@@ -40,5 +40,11 @@ public interface WebBffFacade {
      */
     PageDataView<SysUserDTO> getPagingList(QuerySysUserRequest request);
 
-    List<?> subSection(String start, String end);
+    /**
+     * 并发查询用户信息
+     *
+     * @param capacity
+     * @return
+     */
+    List<SysUserDTO> concurrencyQuery(int capacity);
 }

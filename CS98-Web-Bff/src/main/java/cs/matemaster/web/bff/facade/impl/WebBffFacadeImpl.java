@@ -67,9 +67,13 @@ public class WebBffFacadeImpl implements WebBffFacade {
     }
 
     @Override
-    public List<?> subSection(String start, String end) {
-        return null;
+    public List<SysUserDTO> concurrencyQuery(int capacity) {
+        if (capacity <=0) {
+            throw new WebRuntimeException(WebBffErrorCode.QUERY_CAPACITY_ERROR);
+        }
+        return webBffService.concurrencyQuery(capacity);
     }
+
 
     private void checkAndPreprocess(Eg1QueryRequest request) {
         var formatter = DateTimeFormatter.ofPattern(LOCAL_DATE_TIME_PATTERN);
