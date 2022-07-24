@@ -1,6 +1,5 @@
 package cs.matemaster.web.common.dto;
 
-import cs.matemaster.web.common.vo.SysUserVO;
 import lombok.Data;
 
 import java.util.List;

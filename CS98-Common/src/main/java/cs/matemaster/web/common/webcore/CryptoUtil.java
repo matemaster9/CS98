@@ -1,5 +1,6 @@
 package cs.matemaster.web.common.webcore;
 
+import cs.matemaster.web.common.constant.BizConstant;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.apache.commons.codec.binary.Hex;
@@ -21,15 +22,15 @@ public final class CryptoUtil {
      * @param msg
      * @return
      */
-    public static String SM3Hash(String msg) {
+    public static String sm3Hash(String msg) {
         if (BizUtil.isEmptyOrBlank(msg)) {
-            return BizUtil.Constants.BLANK;
+            return BizConstant.EMPTY_STR;
         } else {
-            return bytes2HexStr(SM3Hash(msg.getBytes(StandardCharsets.UTF_8)));
+            return bytes2HexStr(sm3Hash(msg.getBytes(StandardCharsets.UTF_8)));
         }
     }
 
-    public static byte[] SM3Hash(byte[] msg) {
+    public static byte[] sm3Hash(byte[] msg) {
         if (msg == null || msg.length == 0) {
             return new byte[0];
         } else {

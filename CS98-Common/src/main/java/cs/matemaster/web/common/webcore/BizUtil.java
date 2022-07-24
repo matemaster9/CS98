@@ -50,8 +50,4 @@ public final class BizUtil {
         return StringUtils.isEmpty(str) || StringUtils.isBlank(str);
     }
 
-
-    public static class Constants {
-        public static final String BLANK = "";
-    }
 }

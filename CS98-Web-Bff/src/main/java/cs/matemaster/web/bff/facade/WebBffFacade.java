@@ -6,6 +6,8 @@ import cs.matemaster.web.common.request.Eg1QueryRequest;
 import cs.matemaster.web.common.request.QuerySysUserRequest;
 import cs.matemaster.web.common.vo.SysUserVO;
 
+import java.util.List;
+
 /**
  * @author MateMaster
  * @since 2022/7/9
@@ -37,4 +39,6 @@ public interface WebBffFacade {
      * @return
      */
     PageDataView<SysUserDTO> getPagingList(QuerySysUserRequest request);
+
+    List<?> subSection(String start, String end);
 }

@@ -18,6 +18,7 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 /**
  * @author MateMaster
@@ -63,6 +64,11 @@ public class WebBffFacadeImpl implements WebBffFacade {
         }
 
         return webBffService.getPagingList(request);
+    }
+
+    @Override
+    public List<?> subSection(String start, String end) {
+        return null;
     }
 
     private void checkAndPreprocess(Eg1QueryRequest request) {

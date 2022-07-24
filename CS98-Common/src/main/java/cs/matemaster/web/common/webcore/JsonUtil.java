@@ -6,6 +6,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import cs.matemaster.web.common.constant.BizConstant;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
@@ -23,38 +24,38 @@ public final class JsonUtil {
 
     public static String serialize(Object obj) {
         if (Objects.isNull(obj)) {
-            return BizUtil.Constants.BLANK;
+            return BizConstant.EMPTY_STR;
         }
 
         try {
             return MAPPER.setSerializationInclusion(JsonInclude.Include.ALWAYS).writeValueAsString(obj);
         } catch (JsonProcessingException e) {
-            return BizUtil.Constants.BLANK;
+            return BizConstant.EMPTY_STR;
         }
     }
 
     public static String serializeIgnoreNull(Object obj) {
         if (Objects.isNull(obj)) {
-            return BizUtil.Constants.BLANK;
+            return BizConstant.EMPTY_STR;
         }
 
         try {
             return MAPPER.setSerializationInclusion(JsonInclude.Include.NON_NULL).writeValueAsString(obj);
         } catch (JsonProcessingException e) {
-            return BizUtil.Constants.BLANK;
+            return BizConstant.EMPTY_STR;
         }
     }
 
     public static String serializeWithUpperCamel(Object obj) {
         if (Objects.isNull(obj)) {
-            return BizUtil.Constants.BLANK;
+            return BizConstant.EMPTY_STR;
         }
 
         try {
             CAMEL_MAPPER.setPropertyNamingStrategy(PropertyNamingStrategy.UPPER_CAMEL_CASE);
             return CAMEL_MAPPER.setSerializationInclusion(JsonInclude.Include.NON_NULL).writeValueAsString(obj);
         } catch (JsonProcessingException e) {
-            return BizUtil.Constants.BLANK;
+            return BizConstant.EMPTY_STR;
         }
     }
 

@@ -1,5 +1,6 @@
 package cs.matemaster.web.controller;
 
+import cs.matemaster.web.facade.WebApiFacade;
 import io.swagger.annotations.Api;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/sys")
 @AllArgsConstructor
 public class WebApiController {
+
+    private WebApiFacade webApiFacade;
 
     @GetMapping("/npe")
     public void getNPE() {

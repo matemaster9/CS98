@@ -3,9 +3,6 @@ package cs.matemaster.web.common.util;
 import cs.matemaster.web.common.dto.SysUserDTO;
 
 import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * Mock数据
@@ -21,7 +18,7 @@ public class MockUtil {
     }
 
 
-    public static List<SysUserDTO> getData4SysUserDTO() {
-        return SysUserDTO.generate(DEFAULT_CAPACITY);
+    public static List<SysUserDTO> getSysUserDTOList(int capacity) {
+        return SysUserDTO.generate(capacity);
     }
 }

@@ -11,6 +11,8 @@ import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * @author MateMaster
  * @since 2022/7/9
@@ -45,5 +47,11 @@ public class WebBffController {
     @PostMapping("/getPagingList")
     public PageDataView<SysUserDTO> getPagingList(QuerySysUserRequest request) {
         return webBffFacade.getPagingList(request);
+    }
+
+    @ApiOperation("时间分段")
+    @GetMapping("/subDate")
+    public List<?> subDate(String start ,String end) {
+        return webBffFacade.subSection(start, end);
     }
 }

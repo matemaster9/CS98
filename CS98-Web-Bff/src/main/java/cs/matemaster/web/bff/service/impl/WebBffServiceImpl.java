@@ -57,7 +57,7 @@ public class WebBffServiceImpl implements WebBffService {
         PageDataView<SysUserDTO> pageDataView = new PageDataView<>();
 
         // 获取数据
-        List<SysUserDTO> data4SysUserDTO = MockUtil.getData4SysUserDTO();
+        List<SysUserDTO> data4SysUserDTO = MockUtil.getSysUserDTOList(1000);
 
         if (BizUtil.isEmptyColl(data4SysUserDTO)) {
             return null;
