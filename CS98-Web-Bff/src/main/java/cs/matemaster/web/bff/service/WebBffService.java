@@ -34,5 +34,5 @@ public interface WebBffService {
      * @param capacity
      * @return
      */
-    List<SysUserDTO> concurrencyQuery(int capacity);
+    List<SysUserDTO> concurrentQuery(int capacity);
 }

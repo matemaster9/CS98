@@ -50,10 +50,10 @@ public class WebBffController {
     }
 
     @ApiOperation("并发查询")
-    @GetMapping("/concurrencyQuery")
-    public void concurrencyQuery(int capacity) {
+    @GetMapping("/concurrentQuery")
+    public void concurrentQuery(int capacity) {
         long now = System.currentTimeMillis();
-        log.info(String.valueOf(webBffFacade.concurrencyQuery(capacity).size()));
+        log.info(String.valueOf(webBffFacade.concurrentQuery(capacity).size()));
         log.info("接口耗时: " + (System.currentTimeMillis() - now));
     }
 }

@@ -14,6 +14,7 @@ import java.util.List;
  */
 public class ActDataFunnelController {
 
+    private static final int SAME_MONTH = 0;
 
     /**
      * 日期分段
@@ -28,9 +29,8 @@ public class ActDataFunnelController {
         long interval = between.toTotalMonths();
 
         for (int i = 0; i <= interval; i++) {
-
             // 同月
-            if (interval == 0) {
+            if (interval == SAME_MONTH) {
                 DatePeriod datePeriod = new DatePeriod(start, end);
                 if (isFirstDayOfMonth(start) && isLastDayOfMonth(end)) {
                     datePeriod.setMonthApart(true);

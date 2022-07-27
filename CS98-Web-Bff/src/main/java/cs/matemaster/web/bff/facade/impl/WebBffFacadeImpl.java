@@ -67,11 +67,11 @@ public class WebBffFacadeImpl implements WebBffFacade {
     }
 
     @Override
-    public List<SysUserDTO> concurrencyQuery(int capacity) {
+    public List<SysUserDTO> concurrentQuery(int capacity) {
         if (capacity <=0) {
             throw new WebRuntimeException(WebBffErrorCode.QUERY_CAPACITY_ERROR);
         }
-        return webBffService.concurrencyQuery(capacity);
+        return webBffService.concurrentQuery(capacity);
     }
 
 

@@ -100,7 +100,7 @@ public class WebBffServiceImpl implements WebBffService {
     }
 
     @Override
-    public List<SysUserDTO> concurrencyQuery(int capacity) {
+    public List<SysUserDTO> concurrentQuery(int capacity) {
         int count = capacity / QUERY_CAPACITY + 1;
         List<Future<List<SysUserDTO>>> futureList = new ArrayList<>();
         for (int i = 0; i < count; i++) {
@@ -127,7 +127,7 @@ public class WebBffServiceImpl implements WebBffService {
         private final int capacity;
 
         @Override
-        public List<SysUserDTO> call() throws Exception {
+        public List<SysUserDTO> call() {
             String url = sysBffConfig.getWebApiUrl() + "/sys/getSysUserDTOList?capacity=" + getCapacity();
             var response = HttpClientUtil.doGet(url);
             var result = JsonUtil.deserialize(response.getData(), new TypeReference<DataWrapperDTO<List<SysUserDTO>>>() {
