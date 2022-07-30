@@ -17,6 +17,13 @@ public class MockUtil {
     private MockUtil() {
     }
 
+    public static SysUserDTO getSysUserDTO() {
+        return new SysUserDTO();
+    }
+
+    public static List<SysUserDTO> getSysUserDTOList() {
+        return SysUserDTO.generate(DEFAULT_CAPACITY);
+    }
 
     public static List<SysUserDTO> getSysUserDTOList(int capacity) {
         return SysUserDTO.generate(capacity);
