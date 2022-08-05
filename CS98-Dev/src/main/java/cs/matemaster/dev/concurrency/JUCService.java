@@ -20,13 +20,19 @@ import java.util.concurrent.*;
 public class JUCService {
 
 
-    private static final ExecutorService CONCURRENCY = new ThreadPoolExecutor(
+    private static final ExecutorService Concurrency = new ThreadPoolExecutor(
             BizConstant.CORE_POOL_SIZE,
             BizConstant.MAXIMUM_POOL_SIZE,
             BizConstant.MAXIMUM_POOL_SIZE,
             TimeUnit.SECONDS,
             new ArrayBlockingQueue<>(1000),
             new ThreadFactoryBuilder().setNameFormat("Concurrency-%d").build(),
+            new ThreadPoolExecutor.AbortPolicy()
+    );
+
+    private static final ScheduledExecutorService ScheduledConcurrency = new ScheduledThreadPoolExecutor(
+            BizConstant.CORE_POOL_SIZE,
+            new ThreadFactoryBuilder().setNameFormat("ScheduledConcurrency-%d").build(),
             new ThreadPoolExecutor.AbortPolicy()
     );
 
@@ -68,7 +74,7 @@ public class JUCService {
         CountDownLatch latch = new CountDownLatch(count);
         List<ComStaffDTO> comStaffList = new CopyOnWriteArrayList<>();
         for (int i = 0; i < count; i++) {
-            CONCURRENCY.execute(() -> {
+            Concurrency.execute(() -> {
                 log.debug(Thread.currentThread().getName());
                 comStaffList.addAll(ComStaffDTO.generate(10000));
                 latch.countDown();
@@ -87,7 +93,7 @@ public class JUCService {
         CountDownLatch latch = new CountDownLatch(count);
         List<ComStaffDTO> comStaffList = new CopyOnWriteArrayList<>();
         for (int i = 0; i < count; i++) {
-            CONCURRENCY.submit(new GenerateComStaffTask(comStaffList, latch));
+            Concurrency.submit(new GenerateComStaffTask(comStaffList, latch));
         }
         latch.await();
 
@@ -108,5 +114,10 @@ public class JUCService {
             latch.countDown();
             return null;
         }
+    }
+
+    @Test
+    public void scheduledService() {
+
     }
 }
