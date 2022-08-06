@@ -30,4 +30,11 @@ public class ClubMemberCase {
     }
 
 
+    @Test
+    public void case2() {
+        long sum = ClubMembers.stream()
+                .filter(ClubMember::isSex)
+                .mapToLong(ClubMember::getSerialNumber)
+                .sum();
+    }
 }
