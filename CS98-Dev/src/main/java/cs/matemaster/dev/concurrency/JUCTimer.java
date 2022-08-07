@@ -8,7 +8,6 @@ import lombok.extern.slf4j.Slf4j;
  * @author MateMaster
  * @since 2022/8/4
  */
-@Setter
 @Getter
 @Slf4j
 public class JUCTimer implements Timer {
@@ -17,11 +16,11 @@ public class JUCTimer implements Timer {
 
     @Override
     public void start() {
-        setNow(System.currentTimeMillis());
+        now = System.currentTimeMillis();
     }
 
     @Override
     public void stop() {
-        log.info(String.valueOf(System.currentTimeMillis() - getNow()));
+        log.info("用时：" + (System.currentTimeMillis() - getNow()));
     }
 }
