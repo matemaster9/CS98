@@ -4,6 +4,7 @@ import cs.matemaster.web.common.dto.SysUserDTO;
 import cs.matemaster.web.common.model.ClubMember;
 
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -17,6 +18,7 @@ import java.util.stream.Stream;
 public class MockUtil {
 
     private static final int DEFAULT_CAPACITY = 10_000;
+    private static final ThreadLocalRandom RANDOM = ThreadLocalRandom.current();
 
     private MockUtil() {
     }
@@ -31,6 +33,10 @@ public class MockUtil {
     }
 
     public static int[] getBinarySequence(int capacity) {
-        return IntStream.iterate(1, x -> 2 * x).limit(capacity).toArray();
+        return IntStream.iterate(1, x -> 2 * x).limit(Math.min(31, capacity)).toArray();
+    }
+
+    public static int[] getStochasticSequence(int origin, int bound, int capacity) {
+        return RANDOM.ints(origin, bound).limit(capacity).toArray();
     }
 }
