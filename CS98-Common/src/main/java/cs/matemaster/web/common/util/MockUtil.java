@@ -2,6 +2,7 @@ package cs.matemaster.web.common.util;
 
 import cs.matemaster.web.common.dto.SysUserDTO;
 import cs.matemaster.web.common.model.ClubMember;
+import cs.matemaster.web.common.model.ComStaff;
 
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
@@ -45,5 +46,9 @@ public class MockUtil {
 
     public static int[] getStochasticSequence(int origin, int bound, int capacity) {
         return RANDOM.ints(origin, bound).limit(capacity).toArray();
+    }
+
+    public static List<ComStaff> getComStaffList(int capacity) {
+        return Stream.generate(ComStaff::new).limit(capacity).collect(Collectors.toList());
     }
 }

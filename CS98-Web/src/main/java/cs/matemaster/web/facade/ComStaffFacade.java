@@ -5,4 +5,6 @@ package cs.matemaster.web.facade;
  * @since 2022/8/8
  */
 public interface ComStaffFacade {
+
+    void forge(int size);
 }

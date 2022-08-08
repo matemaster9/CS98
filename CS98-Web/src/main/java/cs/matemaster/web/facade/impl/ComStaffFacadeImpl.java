@@ -1,8 +1,13 @@
 package cs.matemaster.web.facade.impl;
 
+import cs.matemaster.web.common.model.ComStaff;
+import cs.matemaster.web.common.util.MockUtil;
 import cs.matemaster.web.facade.ComStaffFacade;
+import cs.matemaster.web.service.ComStaffService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 /**
  * @author MateMaster
@@ -11,4 +16,12 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class ComStaffFacadeImpl implements ComStaffFacade {
+
+    private final ComStaffService comStaffService;
+
+    @Override
+    public void forge(int size) {
+        List<ComStaff> forgedData = MockUtil.getComStaffList(size);
+        comStaffService.forge(forgedData);
+    }
 }
