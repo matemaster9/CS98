@@ -1,5 +1,7 @@
 package cs.matemaster.web.facade.impl;
 
+import cs.matemaster.web.common.constant.ErrorCode;
+import cs.matemaster.web.common.exception.WebRuntimeException;
 import cs.matemaster.web.common.model.ComStaff;
 import cs.matemaster.web.common.util.MockUtil;
 import cs.matemaster.web.facade.ComStaffFacade;
@@ -21,6 +23,9 @@ public class ComStaffFacadeImpl implements ComStaffFacade {
 
     @Override
     public void forge(int size) {
+        if (size <= 0) {
+            throw new WebRuntimeException(ErrorCode.ILLEGAL_PARAM);
+        }
         List<ComStaff> forgedData = MockUtil.getComStaffList(size);
         comStaffService.forge(forgedData);
     }
