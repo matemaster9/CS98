@@ -24,6 +24,9 @@ public class Item57 {
         System.out.println(strings);
     }
 
+    /**
+     * for-each
+     */
     @Test
     public void demo1() {
         List<ClubMember> clubMemberList = MockUtil.getClubMemberList(10);
@@ -35,6 +38,9 @@ public class Item57 {
         }
     }
 
+    /**
+     * for loop
+     */
     @Test
     public void demo2() {
         List<ClubMember> clubMemberList = MockUtil.getClubMemberList(10);
@@ -48,6 +54,9 @@ public class Item57 {
         log.info("身价500000以下的：" + clubMemberList);
     }
 
+    /**
+     * CV-false
+     */
     @Test
     public void bug() {
         var clubMemberList = MockUtil.getClubMemberList(10);
