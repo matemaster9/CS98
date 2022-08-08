@@ -67,4 +67,22 @@ public final class CryptoUtil {
 
         return MurmurHash3.hash64(builder.toString().getBytes(StandardCharsets.UTF_8), 0, builder.length());
     }
+
+    /**
+     * Objects.hash(args) long 版本
+     *
+     * @param args
+     * @return
+     */
+    public static long standardHash(Object... args) {
+        if (args == null)
+            return 0;
+
+        long result = 1L;
+
+        for (Object element : args)
+            result = 31 * result + (element == null ? 0 : element.hashCode());
+
+        return result;
+    }
 }
