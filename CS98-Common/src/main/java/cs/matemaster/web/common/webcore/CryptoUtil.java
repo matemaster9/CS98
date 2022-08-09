@@ -3,7 +3,9 @@ package cs.matemaster.web.common.webcore;
 import cs.matemaster.web.common.constant.BizConstant;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
+import lombok.var;
 import org.apache.commons.codec.binary.Hex;
+import org.apache.commons.codec.digest.MurmurHash3;
 import org.bouncycastle.crypto.digests.SM3Digest;
 
 import java.nio.charset.StandardCharsets;
@@ -45,5 +47,42 @@ public final class CryptoUtil {
 
     public static String bytes2HexStr(byte[] bytes) {
         return Hex.encodeHexString(bytes).toUpperCase(Locale.ROOT);
+    }
+
+    /**
+     * Murmurhash3
+     *
+     * @param args
+     * @return
+     */
+    public static long murmurhash3(Object... args) {
+        if (args == null || args.length == 0) {
+            return 0L;
+        }
+
+        var builder = new StringBuilder(args.length);
+        for (Object arg : args) {
+            builder.append(arg.toString());
+        }
+
+        return MurmurHash3.hash64(builder.toString().getBytes(StandardCharsets.UTF_8), 0, builder.length());
+    }
+
+    /**
+     * Objects.hash(args) long 版本
+     *
+     * @param args
+     * @return
+     */
+    public static long standardHash(Object... args) {
+        if (args == null)
+            return 0;
+
+        long result = 1L;
+
+        for (Object element : args)
+            result = 31 * result + (element == null ? 0 : element.hashCode());
+
+        return result;
     }
 }

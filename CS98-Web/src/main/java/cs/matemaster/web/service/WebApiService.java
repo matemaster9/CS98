@@ -1,4 +1,4 @@
-package cs.matemaster.web.service.impl;
+package cs.matemaster.web.service;
 
 /**
  * @author MateMaster

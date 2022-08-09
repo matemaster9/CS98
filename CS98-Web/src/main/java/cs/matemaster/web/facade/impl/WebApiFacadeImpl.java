@@ -3,7 +3,7 @@ package cs.matemaster.web.facade.impl;
 import cs.matemaster.web.common.dto.SysUserDTO;
 import cs.matemaster.web.common.util.MockUtil;
 import cs.matemaster.web.facade.WebApiFacade;
-import cs.matemaster.web.service.impl.WebApiService;
+import cs.matemaster.web.service.WebApiService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 

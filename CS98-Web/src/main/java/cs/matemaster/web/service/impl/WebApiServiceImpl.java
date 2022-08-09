@@ -1,8 +1,7 @@
 package cs.matemaster.web.service.impl;
 
-import lombok.AllArgsConstructor;
+import cs.matemaster.web.service.WebApiService;
 import lombok.RequiredArgsConstructor;
-import org.checkerframework.checker.units.qual.A;
 import org.springframework.stereotype.Service;
 
 /**
@@ -11,7 +10,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 @RequiredArgsConstructor
-public class WebApiServiceImpl implements WebApiService{
+public class WebApiServiceImpl implements WebApiService {
 
 
 
