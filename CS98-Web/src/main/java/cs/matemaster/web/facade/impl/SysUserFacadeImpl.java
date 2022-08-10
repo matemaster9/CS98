@@ -1,8 +1,8 @@
 package cs.matemaster.web.facade.impl;
 
-import cs.matemaster.common.dto.SysUserDTO;
-import cs.matemaster.common.exception.WebRuntimeException;
-import cs.matemaster.common.vo.SysUserVO;
+import cs.matemaster.web.common.dto.SysUserDTO;
+import cs.matemaster.web.common.exception.WebRuntimeException;
+import cs.matemaster.web.common.vo.SysUserVO;
 import cs.matemaster.web.constant.WebApiErrorCode;
 import cs.matemaster.web.facade.SysUserFacade;
 import cs.matemaster.web.service.SysUserService;

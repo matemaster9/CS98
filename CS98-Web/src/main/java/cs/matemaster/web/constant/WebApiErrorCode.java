@@ -1,6 +1,6 @@
 package cs.matemaster.web.constant;
 
-import cs.matemaster.common.constant.BaseCode;
+import cs.matemaster.web.common.constant.BaseCode;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

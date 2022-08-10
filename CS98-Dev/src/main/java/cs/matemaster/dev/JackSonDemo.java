@@ -2,8 +2,8 @@ package cs.matemaster.dev;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import cs.matemaster.common.vo.SysUserVO;
-import cs.matemaster.common.webcore.JsonUtil;
+import cs.matemaster.web.common.vo.SysUserVO;
+import cs.matemaster.web.common.webcore.JsonUtil;
 import cs.matemaster.dev.model.ComputerVO;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
