@@ -55,9 +55,29 @@ public final class CryptoUtil {
      * @param args
      * @return
      */
-    public static long murmurhash3(Object... args) {
-        if (args == null || args.length == 0) {
-            return 0L;
+    public static int murmurhash3Hash32(Object... args) {
+        String content = getHashString(args);
+        return MurmurHash3.hash32x86(content.getBytes(StandardCharsets.UTF_8));
+    }
+
+    public static long murmurhash3Hash64(Object... args) {
+        String content = getHashString(args);
+        return MurmurHash3.hash64(content.getBytes(StandardCharsets.UTF_8));
+    }
+
+    public static long murmurhash3UnsignedHash64(Object... args) {
+        String content = getHashString(args);
+        return MurmurHash3.hash64(content.getBytes(StandardCharsets.UTF_8)) & Long.MAX_VALUE;
+    }
+
+    public static long[] murmurhash3Hash128(Object... args) {
+        String content = getHashString(args);
+        return MurmurHash3.hash128x64(content.getBytes(StandardCharsets.UTF_8));
+    }
+
+    private static String getHashString(Object... args) {
+        if (BizUtil.isEmptyArray(args)) {
+            return "";
         }
 
         var builder = new StringBuilder(args.length);
@@ -65,7 +85,7 @@ public final class CryptoUtil {
             builder.append(arg.toString());
         }
 
-        return MurmurHash3.hash64(builder.toString().getBytes(StandardCharsets.UTF_8), 0, builder.length());
+        return builder.toString();
     }
 
     /**
@@ -81,7 +101,7 @@ public final class CryptoUtil {
         long result = 1L;
 
         for (Object element : args)
-            result = 31 * result + (element == null ? 0 : element.hashCode());
+            result = 31L * result + (element == null ? 0 : element.hashCode());
 
         return result;
     }
