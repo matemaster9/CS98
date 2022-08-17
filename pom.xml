@@ -14,7 +14,6 @@
         <module>CS98-Common</module>
         <module>CS98-Web</module>
         <module>CS98-Web-Bff</module>
-        <module>CS98-Dev</module>
     </modules>
 
     <parent>
