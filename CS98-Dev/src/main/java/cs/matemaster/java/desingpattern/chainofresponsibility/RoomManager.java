@@ -6,7 +6,7 @@ import cs.matemaster.web.common.webcore.WebLogger;
  * @author MateMaster
  * @since 2022/8/11
  */
-public class RoomManager implements Handler {
+public class RoomManager extends AbstractHandler implements Handler {
 
 
     @Override

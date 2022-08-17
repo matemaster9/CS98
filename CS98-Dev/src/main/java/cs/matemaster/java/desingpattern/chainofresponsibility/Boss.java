@@ -6,7 +6,7 @@ import cs.matemaster.web.common.webcore.WebLogger;
  * @author MateMaster
  * @since 2022/8/11
  */
-public class Boss implements Handler {
+public class Boss extends AbstractHandler implements Handler {
 
     @Override
     public void handle(int days) {
