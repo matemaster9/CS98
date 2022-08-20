@@ -24,7 +24,7 @@ public class SwaggerConfig {
     private SwaggerProperties properties;
 
     @Bean
-    public Docket docket() {
+    public Docket docs() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .enable(properties.isEnable())
                 .apiInfo(apiInfo())
