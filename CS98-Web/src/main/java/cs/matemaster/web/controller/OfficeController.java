@@ -1,14 +1,14 @@
 package cs.matemaster.web.controller;
 
+import cs.matemaster.web.common.model.vo.Global500VO;
 import cs.matemaster.web.facade.OfficeFacade;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.util.List;
 
 /**
  * @author MateMaster
@@ -32,5 +32,11 @@ public class OfficeController {
     @PostMapping("/uploadGlobalCompanyList")
     public Boolean uploadGlobalCompanyList(@RequestBody MultipartFile file) {
         return officeFacade.uploadGlobalCompanyList(file);
+    }
+
+    @ApiOperation("查询500强企业信息")
+    @GetMapping("/getGlobal500")
+    public Global500VO getGlobal500(Integer year) {
+        return officeFacade.getGlobalCompanyList(year);
     }
 }

@@ -1,6 +1,9 @@
 package cs.matemaster.web.facade;
 
+import cs.matemaster.web.common.model.vo.Global500VO;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.util.List;
 
 /**
  * @author MateMaster
@@ -16,4 +19,12 @@ public interface OfficeFacade {
      * @return
      */
     Boolean uploadGlobalCompanyList(MultipartFile file);
+
+    /**
+     * 按年份查询500强
+     *
+     * @param year
+     * @return
+     */
+    Global500VO getGlobalCompanyList(Integer year);
 }

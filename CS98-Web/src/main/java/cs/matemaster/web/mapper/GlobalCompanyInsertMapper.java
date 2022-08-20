@@ -12,7 +12,7 @@ import java.util.List;
  * @since 2022/8/20
  */
 @Mapper
-public interface GlobalCompanyMapper {
+public interface GlobalCompanyInsertMapper {
 
     @Insert("<script>" +
             "INSERT INTO global_company (com_rank, company_name, income, profit, country, year) " +
