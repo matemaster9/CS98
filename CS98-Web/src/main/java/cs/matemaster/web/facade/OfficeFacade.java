@@ -4,6 +4,7 @@ import cs.matemaster.web.common.model.vo.Global500VO;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author MateMaster
@@ -27,4 +28,8 @@ public interface OfficeFacade {
      * @return
      */
     Global500VO getGlobalCompanyList(Integer year);
+
+    void toMapList(MultipartFile file);
+
+    void exportGlobal500(Integer year);
 }

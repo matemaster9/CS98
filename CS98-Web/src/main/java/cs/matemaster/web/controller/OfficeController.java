@@ -22,12 +22,6 @@ public class OfficeController {
 
     private OfficeFacade officeFacade;
 
-    @ApiOperation("上传员工数据")
-    @PostMapping("/uploadCodingMapList")
-    public Boolean uploadCodingMapList(@RequestBody MultipartFile file) {
-        return null;
-    }
-
     @ApiOperation("上传global500数据")
     @PostMapping("/uploadGlobalCompanyList")
     public Boolean uploadGlobalCompanyList(@RequestBody MultipartFile file) {
@@ -38,5 +32,17 @@ public class OfficeController {
     @GetMapping("/getGlobal500")
     public Global500VO getGlobal500(Integer year) {
         return officeFacade.getGlobalCompanyList(year);
+    }
+
+    @ApiOperation("导出500强企业信息到excel")
+    @GetMapping("/exportGlobal500")
+    public void exportGlobal500(Integer year) {
+        officeFacade.exportGlobal500(year);
+    }
+
+    @ApiOperation("将Excel数据解析成List<Map>")
+    @PostMapping("/toMapList")
+    public void toMapList(@RequestBody MultipartFile file) {
+        officeFacade.toMapList(file);
     }
 }

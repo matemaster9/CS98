@@ -26,4 +26,6 @@ public interface OfficeService {
      * @return
      */
     Global500VO getGlobalCompanyList(Integer year);
+
+    void exportGlobal500(Integer year);
 }
