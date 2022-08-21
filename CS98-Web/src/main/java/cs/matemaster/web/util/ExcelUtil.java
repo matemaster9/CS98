@@ -105,7 +105,7 @@ public final class ExcelUtil {
             response.setDateHeader("Expires", 0);
 
             if (isContainsChinese(fileName)) {
-                response.setHeader("Content-Disposition", String.format("attachment;filename=%s.xls", new String(fileName.getBytes("GBK"))));
+                response.setHeader("Content-Disposition", String.format("attachment;filename=%s.xls", new String(fileName.getBytes("GBK"), StandardCharsets.ISO_8859_1)));
             } else {
                 response.setHeader("Content-Disposition", String.format("attachment;filename=%s.xls", fileName));
             }
