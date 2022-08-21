@@ -25,6 +25,7 @@
     <properties>
         <swagger.version>2.9.2</swagger.version>
         <guava.version>31.1-jre</guava.version>
+        <easypoi.version>4.4.0</easypoi.version>
     </properties>
 
     <dependencies>
