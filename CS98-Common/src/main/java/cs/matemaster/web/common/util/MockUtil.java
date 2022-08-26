@@ -4,6 +4,7 @@ import cs.matemaster.web.common.dto.SysUserDTO;
 import cs.matemaster.web.common.model.ClubMember;
 import cs.matemaster.web.common.model.ComStaff;
 import cs.matemaster.web.common.testmodel.DataFunnel;
+import cs.matemaster.web.common.testmodel.GlobalCompany;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -60,7 +61,7 @@ public class MockUtil {
     public static List<DataFunnel> getDataFunnelForTest(int capacity) {
         Supplier<DataFunnel> supplier = () -> {
             DataFunnel temp = new DataFunnel();
-            temp.setDate(LocalDate.of(2022, RANDOM.nextInt(5,8), RANDOM.nextInt(1, 31)).format(DateTimeFormatter.ofPattern("yyyyMMdd")));
+            temp.setDate(LocalDate.of(2022, RANDOM.nextInt(5, 8), RANDOM.nextInt(1, 31)).format(DateTimeFormatter.ofPattern("yyyyMMdd")));
             temp.setVar1(RANDOM.nextInt(0, 100));
             temp.setVar2(RANDOM.nextInt(0, 100));
             temp.setVar3(RANDOM.nextInt(0, 100));
@@ -70,6 +71,21 @@ public class MockUtil {
             temp.setVar7(BigDecimal.valueOf(RANDOM.nextDouble(0.0, 10000.0)));
             temp.setVar8(BigDecimal.valueOf(RANDOM.nextDouble(0.0, 10000.0)));
             return temp;
+        };
+
+        return Stream.generate(supplier).limit(capacity).collect(Collectors.toList());
+    }
+
+    public static List<GlobalCompany> getGlobalCompanyForTest(int capacity) {
+        Supplier<GlobalCompany> supplier = () -> {
+            GlobalCompany company = new GlobalCompany();
+            company.setYear(RANDOM.nextInt(2018, 2023));
+            company.setCompanyName("GLOBAL_COM");
+            company.setRank(RANDOM.nextInt(1, 500));
+            company.setCountry("Earth");
+            company.setIncome(BigDecimal.valueOf(RANDOM.nextDouble(-1000, 10000)));
+            company.setProfit(BigDecimal.valueOf(RANDOM.nextDouble(-1000, 10000)));
+            return company;
         };
 
         return Stream.generate(supplier).limit(capacity).collect(Collectors.toList());
